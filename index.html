@@ -1,16 +1,15 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Contra Caidas | Sistemas de Línea de Vida</title>
+    <title>Contra Caidas | Sistemas de Línea de Vida + Proecon Alianza Eléctrica</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* ===== ESTILOS CSS OPTIMIZADOS PARA MÓVIL ===== */
+        /* ===== ESTILOS CSS COMBINADOS ===== */
         * {
             margin: 0;
             padding: 0;
@@ -45,30 +44,63 @@
             padding: 0.8rem 1rem;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, #e67e22, #e74c3c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .nav-left {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 15px;
         }
 
-        .logo i {
-            background: linear-gradient(135deg, #e67e22, #e74c3c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            font-size: 1.8rem;
-        }
-
-        /* Menú hamburguesa para móvil */
+        /* Menú hamburguesa para móvil - AHORA A LA IZQUIERDA */
         .menu-toggle {
             display: none;
             font-size: 1.8rem;
             cursor: pointer;
             color: #e67e22;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-item img {
+            height: 45px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s;
+        }
+
+        .logo-item img:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-item span {
+            font-size: 1.3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #e67e22, #e74c3c);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-divider {
+            width: 2px;
+            height: 40px;
+            background: linear-gradient(135deg, #e67e22, #e74c3c);
+            opacity: 0.3;
+        }
+
+        .proecon-badge {
+            font-size: 0.8rem;
+            color: #e67e22;
+            font-weight: 500;
+            margin-left: 5px;
         }
 
         .nav-links {
@@ -159,14 +191,22 @@
         }
 
         .hero-content h1 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             font-weight: 800;
             margin-bottom: 1rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
+        .hero-content h1 span {
+            font-size: 1.5rem;
+            display: block;
+            margin-top: 0.5rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
         .hero-content p {
-            font-size: 1rem;
+            font-size: 1.1rem;
             margin-bottom: 1.5rem;
             opacity: 0.95;
         }
@@ -191,6 +231,57 @@
             background: transparent;
             color: white;
             border-color: white;
+        }
+
+        /* Sección de Alianza */
+        .alliance {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 40px 1rem;
+            text-align: center;
+        }
+
+        .alliance-container {
+            max-width: 1300px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .alliance-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .alliance-item img {
+            height: 40px;
+            width: auto;
+        }
+
+        .alliance-item span {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2d3436;
+        }
+
+        .alliance-plus {
+            font-size: 2rem;
+            color: #e67e22;
+            font-weight: 700;
+        }
+
+        .alliance-text {
+            font-size: 1.1rem;
+            color: #636e72;
+            max-width: 600px;
+            margin: 2rem auto 0;
         }
 
         /* Sección Servicios - 2 columnas en móvil */
@@ -224,13 +315,53 @@
             padding: 0 1rem;
         }
 
+        .services-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .service-tab {
+            background: white;
+            border: 2px solid #e67e22;
+            color: #e67e22;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .service-tab img {
+            height: 25px;
+            width: auto;
+        }
+
+        .service-tab.active {
+            background: #e67e22;
+            color: white;
+        }
+
+        .service-tab.active img {
+            filter: brightness(0) invert(1);
+        }
+
         .services-grid {
             max-width: 1300px;
             margin: auto;
-            display: grid;
+            display: none;
             grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
             padding: 0;
+        }
+
+        .services-grid.active {
+            display: grid;
         }
 
         .service-card {
@@ -244,7 +375,6 @@
             z-index: 1;
             cursor: pointer;
             text-align: center;
-            border-bottom: 3px solid transparent;
         }
 
         .service-card::before {
@@ -414,6 +544,18 @@
 
         .project-item:hover img {
             transform: scale(1.05);
+        }
+
+        .project-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+            font-weight: 500;
         }
 
         /* Certificaciones */
@@ -615,7 +757,8 @@
         }
 
         .form-group input,
-        .form-group textarea {
+        .form-group textarea,
+        .form-group select {
             width: 100%;
             padding: 0.9rem;
             border: 2px solid #e9ecef;
@@ -626,7 +769,8 @@
         }
 
         .form-group input:focus,
-        .form-group textarea:focus {
+        .form-group textarea:focus,
+        .form-group select:focus {
             outline: none;
             border-color: #e67e22;
         }
@@ -672,6 +816,26 @@
             margin-bottom: 1rem;
         }
 
+        .footer-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+
+        .footer-logos span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #e67e22;
+        }
+
+        .footer-logos img {
+            height: 35px;
+            width: auto;
+        }
+
         .social-icons {
             margin: 1rem 0;
         }
@@ -712,7 +876,7 @@
                 display: flex;
             }
             
-            .services-grid {
+            .services-grid.active {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 1rem;
             }
@@ -737,15 +901,51 @@
             .hero-content h1 {
                 font-size: 1.8rem;
             }
+
+            .hero-content h1 span {
+                font-size: 1.2rem;
+            }
             
             .section-title h2 {
                 font-size: 1.6rem;
+            }
+
+            .nav-left {
+                gap: 10px;
+            }
+
+            .logo-container {
+                gap: 8px;
+            }
+
+            .logo-item img {
+                height: 35px;
+            }
+
+            .logo-item span {
+                font-size: 1rem;
+            }
+
+            .logo-divider {
+                height: 30px;
+            }
+
+            .alliance-item {
+                padding: 0.8rem 1.5rem;
+            }
+
+            .alliance-item img {
+                height: 30px;
+            }
+
+            .alliance-item span {
+                font-size: 1rem;
             }
         }
 
         /* Para tablets */
         @media (min-width: 769px) and (max-width: 1024px) {
-            .services-grid {
+            .services-grid.active {
                 grid-template-columns: repeat(3, 1fr);
             }
             
@@ -760,7 +960,7 @@
 
         /* Desktop */
         @media (min-width: 1025px) {
-            .services-grid {
+            .services-grid.active {
                 grid-template-columns: repeat(3, 1fr);
             }
             
@@ -814,22 +1014,32 @@
 <body>
     <header id="header">
         <nav>
-            <div class="logo">
-                <!-- Aquí puedes poner tu imagen de logo -->
-                <!-- <img src="ruta-de-tu-logo.png" alt="Altius Safety" style="height: 40px;"> -->
-                <!-- Mientras tanto, mostramos un ícono temporal -->
-                <i class="fas fa-shield-alt"></i>
-                <span data-translate="companyName">Contra Caidas </span>
-            </div>
-            
-            <!-- Menú hamburguesa -->
-            <div class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
+            <div class="nav-left">
+                <!-- Menú hamburguesa - AHORA A LA IZQUIERDA ANTES DE LOS LOGOS -->
+                <div class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                <div class="logo-container">
+                    <!-- Logo Contra Caidas (Principal) -->
+                    <div class="logo-item">
+                        <img src="https://i.pinimg.com/736x/f0/ec/5a/f0ec5a0311f400c7858bd22e6c206696.jpg" alt="Contra Caidas">
+                        <span> </span>
+                    </div>
+                    
+                    <div class="logo-divider"></div>
+                    
+                    <!-- Logo Proecon (Aliado) -->
+                    <div class="logo-item">
+                        <img src="https://i.pinimg.com/736x/48/55/be/4855be150378519852471eb2d633ec90.jpg" alt="Proecon">
+                        <span> <span class="proecon-badge">   </span></span>
+                    </div>
+                </div>
             </div>
             
             <ul class="nav-links" id="navLinks">
                 <li><a href="#inicio" data-translate="home">Inicio</a></li>
-                <li><a href="#servicios" data-translate="services">Sistemas</a></li>
+                <li><a href="#servicios" data-translate="services">Servicios</a></li>
                 <li><a href="#proyectos" data-translate="projects">Proyectos</a></li>
                 <li><a href="#faq" data-translate="faq">Preguntas</a></li>
                 <li><a href="#contacto" data-translate="contact">Contacto</a></li>
@@ -844,9 +1054,9 @@
         </nav>
     </header>
 
-    <!-- WhatsApp flotante -->
+    <!-- WhatsApp flotante (Número de Contra Caidas) -->
     <div class="whatsapp-float">
-        <a href="https://wa.me/569 87193840" target="_blank">
+        <a href="https://wa.me/56987193840" target="_blank">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
@@ -855,19 +1065,52 @@
     <section id="inicio" class="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 data-translate="heroTitle">Contra Caidas <br>Sistemas de Línea de Vida</h1>
-            <p data-translate="heroDesc">Protección contra caídas para trabajos en altura. Diseño, instalación y certificación de líneas de vida horizontales y verticales.</p>
+            <h1 data-translate="heroTitle">Contra Caidas <span> + Proecon Alianza Estratégica</span></h1>
+            <p data-translate="heroDesc">Especialistas en sistemas de línea de vida y protección contra caídas, ahora con soluciones eléctricas profesionales a través de nuestra alianza con Proecon.</p>
             <a href="#contacto" class="btn" data-translate="heroBtn">Solicitar Asesoría</a>
         </div>
     </section>
 
-    <!-- Servicios -->
+    <!-- Sección de Alianza Destacada -->
+    <section class="alliance">
+        <div class="alliance-container">
+            <div class="alliance-item">
+                <img src="https://i.pinimg.com/736x/f0/ec/5a/f0ec5a0311f400c7858bd22e6c206696.jpg" alt="Contra Caidas">
+                <span>Contra Caidas</span>
+              
+              <img src="https://i.pinimg.com/736x/48/55/be/4855be150378519852471eb2d633ec90.jpg" alt="Proecon">
+                <span>Proecon</span>
+            </div>
+              
+              
+              
+              
+            </div>
+            
+        </div>
+        <p class="alliance-text">Dos empresas líderes unidas para ofrecerte soluciones integrales en seguridad en altura y servicios eléctricos profesionales.</p>
+    </section>
+
+    <!-- Servicios con Tabs -->
     <section id="servicios" class="services">
         <div class="section-title">
-            <h2><span data-translate="servicesTitle">Nuestros</span> <span data-translate="servicesHighlight">Sistemas</span></h2>
-            <p data-translate="servicesDesc">Soluciones de seguridad para trabajo en altura</p>
+            <h2><span data-translate="servicesTitle">Nuestros</span> <span data-translate="servicesHighlight">Servicios</span></h2>
+            <p data-translate="servicesDesc">Selecciona el tipo de servicio que necesitas</p>
         </div>
-        <div class="services-grid" id="servicesGrid">
+        
+        <div class="services-tabs">
+            <div class="service-tab active" onclick="showServiceTab('contracaidas')">
+                <img src="https://i.pinimg.com/736x/f0/ec/5a/f0ec5a0311f400c7858bd22e6c206696.jpg" alt="Contra Caidas">
+                <span>Contra Caidas</span>
+            </div>
+            <div class="service-tab" onclick="showServiceTab('proecon')">
+                <img src="https://i.pinimg.com/736x/48/55/be/4855be150378519852471eb2d633ec90.jpg" alt="Proecon">
+                <span>Proecon</span>
+            </div>
+        </div>
+
+        <!-- Servicios Contra Caidas -->
+        <div id="contracaidas-services" class="services-grid active">
             <div class="service-card" data-service="horizontal">
                 <i class="fas fa-grip-lines"></i>
                 <h3 data-translate="service1">Líneas de Vida Horizontales</h3>
@@ -899,13 +1142,47 @@
                 <p data-translate="service6Desc">Arnés, absorbedores, conectores y líneas de vida portátiles.</p>
             </div>
         </div>
+
+        <!-- Servicios Proecon -->
+        <div id="proecon-services" class="services-grid">
+            <div class="service-card" data-service="residencial">
+                <i class="fas fa-home"></i>
+                <h3 data-translate="proecon1">Instalaciones Residenciales</h3>
+                <p data-translate="proecon1Desc">Instalaciones completas para hogares con los más altos estándares de seguridad.</p>
+            </div>
+            <div class="service-card" data-service="comercial">
+                <i class="fas fa-building"></i>
+                <h3 data-translate="proecon2">Instalaciones Comerciales</h3>
+                <p data-translate="proecon2Desc">Soluciones para locales, oficinas y edificios cumpliendo normativas vigentes.</p>
+            </div>
+            <div class="service-card" data-service="industrial">
+                <i class="fas fa-industry"></i>
+                <h3 data-translate="proecon3">Instalaciones Industriales</h3>
+                <p data-translate="proecon3Desc">Sistemas eléctricos industriales con tableros de control y automatización.</p>
+            </div>
+            <div class="service-card" data-service="mantenimiento">
+                <i class="fas fa-tools"></i>
+                <h3 data-translate="proecon4">Mantenimiento Preventivo</h3>
+                <p data-translate="proecon4Desc">Programas para evitar fallos y prolongar la vida útil de tus instalaciones.</p>
+            </div>
+            <div class="service-card" data-service="renovables">
+                <i class="fas fa-solar-panel"></i>
+                <h3 data-translate="proecon5">Energías Renovables</h3>
+                <p data-translate="proecon5Desc">Instalación de paneles solares y sistemas de energía alternativa.</p>
+            </div>
+            <div class="service-card" data-service="estudios">
+                <i class="fas fa-chart-line"></i>
+                <h3 data-translate="proecon6">Estudios Eléctricos</h3>
+                <p data-translate="proecon6Desc">Análisis de carga, calidad de energía y certificaciones eléctricas.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Modal para fotos -->
     <div id="serviceModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2 id="modalTitle">Líneas de Vida Horizontales</h2>
+                <h2 id="modalTitle">Sistemas de Seguridad</h2>
                 <span class="close-modal">&times;</span>
             </div>
             <div class="modal-gallery" id="modalGallery"></div>
@@ -916,76 +1193,103 @@
     <section id="proyectos" class="projects">
         <div class="section-title">
             <h2><span data-translate="projectsTitle">Proyectos</span> <span data-translate="projectsHighlight">Destacados</span></h2>
-            <p data-translate="projectsDesc">Instalaciones recientes</p>
+            <p data-translate="projectsDesc">Instalaciones recientes de Contra Caidas y Proecon</p>
         </div>
         <div class="projects-grid">
             <div class="project-item">
                 <img src="https://i.pinimg.com/736x/2f/ec/95/2fec95e20589a0ee4b1341cd526fae36.jpg" alt="Instalación en edificio corporativo">
+                <div class="project-caption">Línea de Vida - Edificio</div>
             </div>
             <div class="project-item">
                 <img src="https://i.pinimg.com/736x/9d/25/ae/9d25ae654498d30e06b9ff4ec8eee5ed.jpg" alt="Línea de vida en planta industrial">
+                <div class="project-caption">Sistema Industrial - Contra Caidas</div>
             </div>
             <div class="project-item">
-                <img src="https://i.pinimg.com/736x/a5/93/34/a59334eeb091ca29ebb4d693e57d06f6.jpg" alt="Sistema en torre de comunicaciones">
+                <img src="https://i.pinimg.com/736x/a5/93/34/a59334eeb091ca29ebb4d693e57d06f6.jpg" alt="Sistema en torre">
+                <div class="project-caption">Torre Comunicaciones</div>
             </div>
             <div class="project-item">
-                <img src="https://i.pinimg.com/736x/fe/b2/e5/feb2e5370cc457a4743d63b96e51b2e5.jpg" alt="Anclajes en estructura metálica">
+                <img src="https://i.pinimg.com/1200x/3f/da/a2/3fdaa2759c32a25acf01261d9f0295b0.jpg" alt="Instalación eléctrica">
+                <div class="project-caption">Instalación Eléctrica - Proecon</div>
             </div>
             <div class="project-item">
-                <img src="https://i.pinimg.com/736x/8c/55/5d/8c555d2d68c9dc58e9a99d2fe16faf59.jpg" alt="Capacitación en altura">
+                <img src="https://i.pinimg.com/736x/70/79/f2/7079f284ed6d9d0adab65bbee823ffa3.jpg" alt="Planta industrial eléctrica">
+                <div class="project-caption">Planta Industrial - Proecon</div>
             </div>
             <div class="project-item">
-                <img src="https://i.pinimg.com/736x/b9/22/66/b92266b2c66e7efe61606b396d892d29.jpg" alt="Inspección de línea de vida">
+                <img src="https://i.pinimg.com/736x/b9/22/66/b92266b2c66e7efe61606b396d892d29.jpg" alt="Inspección">
+                <div class="project-caption">Inspección de Seguridad</div>
             </div>
         </div>
     </section>
 
-   
+    <!-- Certificaciones -->
+    <section class="certifications">
+        <h3 data-translate="certifications">Certificaciones Contra Caidas</h3>
+        <div class="cert-logos">
+            <div class="cert-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/ISO_9001_logo.svg/1200px-ISO_9001_logo.svg.png" alt="ISO 9001">
+                <span>ISO 9001</span>
+            </div>
+            <div class="cert-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/ANSI_logo.svg/1200px-ANSI_logo.svg.png" alt="ANSI">
+                <span>ANSI Z359</span>
+            </div>
+            <div class="cert-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/OSHA_logo.svg/1200px-OSHA_logo.svg.png" alt="OSHA">
+                <span>OSHA</span>
+            </div>
+            <div class="cert-item">
+                <img src="https://www.mutual.cl/portal/mutual-cchc-corporativo/images/logo-mutual.png" alt="Mutual">
+                <span>Mutual</span>
+            </div>
+        </div>
+    </section>
 
     <!-- FAQ -->
     <section id="faq" class="faq">
         <div class="section-title">
             <h2><span data-translate="faqTitle">Preguntas</span> <span data-translate="faqHighlight">Frecuentes</span></h2>
-            <p data-translate="faqDesc">Resolvemos tus dudas sobre líneas de vida</p>
+            <p data-translate="faqDesc">Resolvemos tus dudas sobre nuestros servicios</p>
         </div>
         <div class="faq-container">
             <div class="faq-item">
                 <div class="faq-question">
-                    <h4 data-translate="faq1">¿Qué es una línea de vida?</h4>
+                    <h4 data-translate="faq1">¿Qué es una línea de vida y por qué es obligatoria?</h4>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p data-translate="faq1Answer">Es un sistema de seguridad anticaídas compuesto por un anclaje flexible o rígido (cable, riel) al cual el trabajador se conecta mediante su arnés, permitiendo desplazamiento seguro en altura.</p>
+                    <p data-translate="faq1Answer">Es un sistema de seguridad anticaídas obligatorio para trabajos en altura según normativa. Consiste en un anclaje (cable o riel) al que el trabajador se conecta mediante su arnés, permitiendo desplazamiento seguro.</p>
                 </div>
             </div>
             
             <div class="faq-item">
                 <div class="faq-question">
-                    <h4 data-translate="faq2">¿Cada cuánto deben inspeccionarse?</h4>
+                    <h4 data-translate="faq2">¿Cada cuánto deben inspeccionarse las líneas de vida?</h4>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p data-translate="faq2Answer">Según normativa, las líneas de vida deben ser inspeccionadas anualmente por un organismo acreditado. Además, se recomienda inspección visual antes de cada uso.</p>
+                    <p data-translate="faq2Answer">Según normativa ANSI/OSHA, deben ser inspeccionadas anualmente por un organismo acreditado. Contra Caidas realiza inspecciones y certificaciones con técnicos especializados.</p>
                 </div>
             </div>
             
             <div class="faq-item">
                 <div class="faq-question">
-                    <h4 data-translate="faq3">¿Qué normativas cumplen sus sistemas?</h4>
+                    <h4 data-translate="faq3">¿Qué servicios ofrece Proecon como aliado?</h4>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p data-translate="faq3Answer">Todos nuestros sistemas cumplen con normativa internacional ANSI ,OSHA,CSA,ASTM   y normas locales NCH1258. Realizamos pruebas de carga y certificación.</p>
+                    <p data-translate="faq3Answer">A través de nuestra alianza con Proecon, ofrecemos instalaciones eléctricas residenciales, comerciales e industriales, mantenimiento preventivo, energías renovables y estudios eléctricos certificados.</p>
                 </div>
             </div>
             
             <div class="faq-item">
                 <div class="faq-question">
-                    <h4 data-translate="faq4">¿Realizan instalación en todo Chile?</h4>
+                    <h4 data-translate="faq4">¿Realizan instalaciones en todo Chile?</h4>
                     <i class="fas fa-chevron-down"></i>
                 </div>
                 <div class="faq-answer">
-                    <p data-translate="faq4Answer">Sí, tenemos cobertura nacional. Nuestros técnicos viajan a cualquier región para realizar instalaciones, inspecciones y capacitaciones.</p>
+                    <p data-translate="faq4Answer">Sí, Contra Caidas tiene cobertura nacional. Nuestros técnicos viajan a cualquier región para realizar instalaciones de líneas de vida, inspecciones y capacitaciones. Proecon también atiende en regiones seleccionadas.</p>
                 </div>
             </div>
         </div>
@@ -995,14 +1299,22 @@
     <section id="contacto" class="contact">
         <div class="contact-container">
             <div class="contact-info">
-                <h3 data-translate="contactTitle">¿Necesitas asesoría?</h3>
-                <p data-translate="contactDesc">Te ayudamos a elegir el sistema adecuado para tu proyecto</p>
+                <h3 data-translate="contactTitle">Contra Caidas + Proecon</h3>
+                <p data-translate="contactDesc">Consulta por nuestros servicios integrados de seguridad en altura y soluciones eléctricas</p>
                 
                 <div class="info-item">
                     <i class="fas fa-phone"></i>
                     <div>
-                        <strong data-translate="phone">Teléfono</strong>
+                        <strong data-translate="phone">Teléfono Contra Caidas</strong>
                         <p>+56 9 8719 3840</p>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <strong>Teléfono Proecon</strong>
+                        <p>+56 9 5517 4362</p>
                     </div>
                 </div>
                 
@@ -1011,15 +1323,15 @@
                     <div>
                         <strong data-translate="email">Email</strong>
                         <p>contracaidas@gmail.com</p>
+                        <p>proecon@contacto.cl</p>
                     </div>
                 </div>
                 
                 <div class="info-item">
                     <i class="fas fa-map-marker-alt"></i>
                     <div>
-                        <strong data-translate="address">Oficina</strong>
-                        <p data-translate="addressValue"> PEDRO DE VALDIVIA NRO.451 A DPTO.2
-LA CALERA </p>
+                        <strong data-translate="address">Oficina Central</strong>
+                        <p data-translate="addressValue">PEDRO DE VALDIVIA NRO.451 A DPTO.2, LA CALERA</p>
                     </div>
                 </div>
                 
@@ -1046,7 +1358,16 @@ LA CALERA </p>
                         <input type="text" id="contactPhone" placeholder="Teléfono" data-translate="phonePlaceholder" required>
                     </div>
                     <div class="form-group">
-                        <textarea id="contactMessage" placeholder="Tipo de sistema que necesita" data-translate="messagePlaceholder" required></textarea>
+                        <select id="serviceType" required>
+                            <option value="">Selecciona tipo de servicio</option>
+                            <option value="linea-vida">Línea de Vida (Contra Caidas)</option>
+                            <option value="inspeccion">Inspección/Certificación (Contra Caidas)</option>
+                            <option value="electrico">Servicio Eléctrico (Proecon)</option>
+                            <option value="ambos">Ambos servicios</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="contactMessage" placeholder="Mensaje" data-translate="messagePlaceholder" required></textarea>
                     </div>
                     <button type="submit" class="btn-submit" data-translate="submitBtn">Enviar por WhatsApp</button>
                 </form>
@@ -1057,11 +1378,17 @@ LA CALERA </p>
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2025 <span data-translate="companyName">Contra Caidas</span> - <span data-translate="rights">Sistemas de Línea de Vida</span></p>
+            <div class="footer-logos">
+                <span><img src="https://i.pinimg.com/736x/f0/ec/5a/f0ec5a0311f400c7858bd22e6c206696.jpg" alt="Contra Caidas" style="height: 35px;"> Contra Caidas</span>
+                <span><i class="fas fa-plus"></i></span>
+                <span><img src="https://i.pinimg.com/736x/48/55/be/4855be150378519852471eb2d633ec90.jpg" alt="Proecon" style="height: 35px;"> Proecon</span>
+            </div>
+            <p>&copy; 2025 Contra Caidas & Proecon - <span data-translate="rights">Seguridad en Altura y Soluciones Eléctricas</span></p>
             <div class="social-icons">
                 <a href="#"><i class="fab fa-facebook"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
                 <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
             </div>
         </div>
     </footer>
@@ -1081,10 +1408,25 @@ LA CALERA </p>
             });
         });
 
-        // ===== 2. FORMULARIO WHATSAPP =====
+        // ===== 2. TABS DE SERVICIOS =====
+        function showServiceTab(company) {
+            // Actualizar tabs
+            document.querySelectorAll('.service-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            event.target.closest('.service-tab').classList.add('active');
+            
+            // Mostrar servicios correspondientes
+            document.querySelectorAll('.services-grid').forEach(grid => {
+                grid.classList.remove('active');
+            });
+            document.getElementById(company + '-services').classList.add('active');
+        }
+
+        // ===== 3. FORMULARIO WHATSAPP (Número de Contra Caidas) =====
         const contactForm = document.getElementById('contactForm');
         const formMessage = document.getElementById('formMessage');
-        const whatsappNumber = '569 87193840';
+        const whatsappNumber = '56987193840';
 
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -1092,14 +1434,19 @@ LA CALERA </p>
             const name = document.getElementById('contactName').value;
             const email = document.getElementById('contactEmail').value;
             const phone = document.getElementById('contactPhone').value;
+            const serviceType = document.getElementById('serviceType').value;
             const message = document.getElementById('contactMessage').value;
             
-            if (!name || !email || !phone || !message) {
+            if (!name || !email || !phone || !serviceType || !message) {
                 showFormMessage('Completa todos los campos', 'error');
                 return;
             }
             
-            const whatsappMessage = `*Contra Caidas- Consulta*%0A%0A*Nombre:* ${name}%0A*Email:* ${email}%0A*Teléfono:* ${phone}%0A*Consulta:* ${message}`;
+            const serviceText = serviceType === 'linea-vida' ? 'Línea de Vida' :
+                               serviceType === 'inspeccion' ? 'Inspección' :
+                               serviceType === 'electrico' ? 'Servicio Eléctrico' : 'Ambos servicios';
+            
+            const whatsappMessage = `*Contra Caidas + Proecon - Consulta*%0A%0A*Nombre:* ${name}%0A*Email:* ${email}%0A*Teléfono:* ${phone}%0A*Servicio:* ${serviceText}%0A*Mensaje:* ${message}`;
             
             window.open(`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`, '_blank');
             
@@ -1118,33 +1465,91 @@ LA CALERA </p>
             }, 3000);
         }
 
-        // ===== 3. MODAL DE FOTOS =====
+        // ===== 4. MODAL DE FOTOS =====
         const modal = document.getElementById('serviceModal');
         const modalTitle = document.getElementById('modalTitle');
         const modalGallery = document.getElementById('modalGallery');
         const closeModal = document.querySelector('.close-modal');
 
-        
+        // Imágenes para servicios de Contra Caidas
+        const contracaidasImages = {
+            horizontal: [
+                'https://i.pinimg.com/736x/3f/ed/27/3fed27a765726d0eefc26b9fa299f12e.jpg',
+              
+                'https://i.pinimg.com/736x/47/86/da/4786da6a9e5b9e269fffead28b1122e8.jpg',
+              
+                
+            ],
+            vertical: [
+                ' https://i.pinimg.com/1200x/f6/e5/9c/f6e59cc9dbc66dba3b0b366b7dbcfaf0.jpg',
+                'https://i.pinimg.com/736x/a5/93/34/a59334eeb091ca29ebb4d693e57d06f6.jpg'
+            ],
+            anclajes: [
+                'https://i.pinimg.com/1200x/31/5e/b9/315eb96d469bcda08977815a76623d2e.jpg',
+              'https://i.pinimg.com/736x/a0/6f/76/a06f7697c648bfbd7cc0441997a76598.jpg'
+              
+            ]
+        };
+
+        // Imágenes para servicios de Proecon
+        const proeconImages = {
+            residencial: [
+                
+                'https://i.pinimg.com/736x/22/2d/3a/222d3a6739cd52dd76765b53ab92221a.jpg',
+              'https://i.pinimg.com/736x/58/a6/8b/58a68b3c1df58262e83f46c1b971abde.jpg',
+              
+            ],
+            comercial: [
+                ' https://i.pinimg.com/736x/90/b3/5e/90b35e26186a207946c3801ff02d36fe.jpg',
+             ' https://i.pinimg.com/1200x/3f/da/a2/3fdaa2759c32a25acf01261d9f0295b0.jpg'
+            ],
+            industrial: [
+                ' https://i.pinimg.com/1200x/12/96/a4/1296a4fdece52c3371ae5dcbbd04bd32.jpg ',
+              'https://i.pinimg.com/736x/88/eb/e3/88ebe36773f5d99e23d593ae9588844f.jpg',
+            ]
+        };
 
         const serviceTitles = {
+            // Contra Caidas
             horizontal: 'Líneas de Vida Horizontales',
             vertical: 'Líneas de Vida Verticales',
             anclajes: 'Puntos de Anclaje',
             inspeccion: 'Inspección y Certificación',
             capacitacion: 'Capacitación en Altura',
-            equipos: 'Venta de Equipos'
+            equipos: 'Venta de Equipos',
+            // Proecon
+            residencial: 'Instalaciones Residenciales',
+            comercial: 'Instalaciones Comerciales',
+            industrial: 'Instalaciones Industriales',
+            mantenimiento: 'Mantenimiento Preventivo',
+            renovables: 'Energías Renovables',
+            estudios: 'Estudios Eléctricos'
         };
 
         document.querySelectorAll('.service-card').forEach(card => {
             card.addEventListener('click', function() {
                 const service = this.dataset.service;
-                modalTitle.textContent = serviceTitles[service];
+                modalTitle.textContent = serviceTitles[service] || 'Servicio';
+                
+                // Combinar imágenes de ambas empresas
+                const allImages = {...contracaidasImages, ...proeconImages};
+                const images = allImages[service] || [];
                 
                 let imagesHTML = '';
-                if (serviceImages[service]) {
-                    serviceImages[service].forEach(imgUrl => {
-                        imagesHTML += `<img src="${imgUrl}" alt="${serviceTitles[service]}" onclick="window.open(this.src, '_blank')">`;
-                    });
+                images.forEach(imgUrl => {
+                    imagesHTML += `<img src="${imgUrl}" alt="${serviceTitles[service]}" onclick="window.open(this.src, '_blank')">`;
+                });
+                
+                // Si no hay imágenes específicas, mostrar imágenes por defecto
+                if (imagesHTML === '') {
+                    imagesHTML = `
+               
+                <img src="https://i.pinimg.com/1200x/f6/e5/9c/f6e59cc9dbc66dba3b0b366b7dbcfaf0.jpg" alt="Servicio">
+                        <img src="https://i.pinimg.com/736x/90/b3/5e/90b35e26186a207946c3801ff02d36fe.jpg" alt="Servicio">
+                        
+                        
+               
+                    `;
                 }
                 
                 modalGallery.innerHTML = imagesHTML;
@@ -1165,7 +1570,7 @@ LA CALERA </p>
             }
         });
 
-        // ===== 4. FAQ ACORDEÓN =====
+        // ===== 5. FAQ ACORDEÓN =====
         document.querySelectorAll('.faq-question').forEach(question => {
             question.addEventListener('click', function() {
                 this.classList.toggle('active');
@@ -1179,21 +1584,22 @@ LA CALERA </p>
             });
         });
 
-        // ===== 5. TRADUCCIONES =====
+        // ===== 6. TRADUCCIONES =====
         const translations = {
             es: {
-                companyName: "Altius Safety",
+                companyName: "Contra Caidas + Proecon",
                 home: "Inicio",
-                services: "Sistemas",
+                services: "Servicios",
                 projects: "Proyectos",
                 faq: "Preguntas",
                 contact: "Contacto",
-                heroTitle: "Altius Safety<br>Sistemas de Línea de Vida",
-                heroDesc: "Protección contra caídas para trabajos en altura. Diseño, instalación y certificación de líneas de vida horizontales y verticales.",
+                heroTitle: "Contra Caidas + Proecon",
+                heroDesc: "Especialistas en sistemas de línea de vida y protección contra caídas, ahora con soluciones eléctricas profesionales a través de nuestra alianza con Proecon.",
                 heroBtn: "Solicitar Asesoría",
                 servicesTitle: "Nuestros",
-                servicesHighlight: "Sistemas",
-                servicesDesc: "Soluciones de seguridad para trabajo en altura",
+                servicesHighlight: "Servicios",
+                servicesDesc: "Selecciona el tipo de servicio que necesitas",
+                // Contra Caidas servicios
                 service1: "Líneas de Vida Horizontales",
                 service1Desc: "Sistemas flexibles y rígidos para desplazamiento horizontal en techos y estructuras.",
                 service2: "Líneas de Vida Verticales",
@@ -1206,27 +1612,40 @@ LA CALERA </p>
                 service5Desc: "Entrenamiento práctico para uso correcto de sistemas anticaídas.",
                 service6: "Venta de Equipos",
                 service6Desc: "Arnés, absorbedores, conectores y líneas de vida portátiles.",
+                // Proecon servicios
+                proecon1: "Instalaciones Residenciales",
+                proecon1Desc: "Instalaciones completas para hogares con los más altos estándares de seguridad.",
+                proecon2: "Instalaciones Comerciales",
+                proecon2Desc: "Soluciones para locales, oficinas y edificios cumpliendo normativas vigentes.",
+                proecon3: "Instalaciones Industriales",
+                proecon3Desc: "Sistemas eléctricos industriales con tableros de control y automatización.",
+                proecon4: "Mantenimiento Preventivo",
+                proecon4Desc: "Programas para evitar fallos y prolongar la vida útil de tus instalaciones.",
+                proecon5: "Energías Renovables",
+                proecon5Desc: "Instalación de paneles solares y sistemas de energía alternativa.",
+                proecon6: "Estudios Eléctricos",
+                proecon6Desc: "Análisis de carga, calidad de energía y certificaciones eléctricas.",
                 projectsTitle: "Proyectos",
                 projectsHighlight: "Destacados",
-                projectsDesc: "Instalaciones recientes",
-                certifications: "Certificaciones y Normativas",
+                projectsDesc: "Instalaciones recientes de Contra Caidas y Proecon",
+                certifications: "Certificaciones Contra Caidas",
                 faqTitle: "Preguntas",
                 faqHighlight: "Frecuentes",
-                faqDesc: "Resolvemos tus dudas sobre líneas de vida",
-                faq1: "¿Qué es una línea de vida?",
-                faq1Answer: "Es un sistema de seguridad anticaídas compuesto por un anclaje flexible o rígido (cable, riel) al cual el trabajador se conecta mediante su arnés, permitiendo desplazamiento seguro en altura.",
-                faq2: "¿Cada cuánto deben inspeccionarse?",
-                faq2Answer: "Según normativa, las líneas de vida deben ser inspeccionadas anualmente por un organismo acreditado. Además, se recomienda inspección visual antes de cada uso.",
-                faq3: "¿Qué normativas cumplen sus sistemas?",
-                faq3Answer: "Todos nuestros sistemas cumplen con normativa internacional ANSI Z359, CE EN 795 y normas locales SEC. Realizamos pruebas de carga y certificación.",
-                faq4: "¿Realizan instalación en todo Chile?",
-                faq4Answer: "Sí, tenemos cobertura nacional. Nuestros técnicos viajan a cualquier región para realizar instalaciones, inspecciones y capacitaciones.",
-                contactTitle: "¿Necesitas asesoría?",
-                contactDesc: "Te ayudamos a elegir el sistema adecuado para tu proyecto",
+                faqDesc: "Resolvemos tus dudas sobre nuestros servicios",
+                faq1: "¿Qué es una línea de vida y por qué es obligatoria?",
+                faq1Answer: "Es un sistema de seguridad anticaídas obligatorio para trabajos en altura según normativa. Consiste en un anclaje (cable o riel) al que el trabajador se conecta mediante su arnés, permitiendo desplazamiento seguro.",
+                faq2: "¿Cada cuánto deben inspeccionarse las líneas de vida?",
+                faq2Answer: "Según normativa ANSI/OSHA, deben ser inspeccionadas anualmente por un organismo acreditado. Contra Caidas realiza inspecciones y certificaciones con técnicos especializados.",
+                faq3: "¿Qué servicios ofrece Proecon como aliado?",
+                faq3Answer: "A través de nuestra alianza con Proecon, ofrecemos instalaciones eléctricas residenciales, comerciales e industriales, mantenimiento preventivo, energías renovables y estudios eléctricos certificados.",
+                faq4: "¿Realizan instalaciones en todo Chile?",
+                faq4Answer: "Sí, Contra Caidas tiene cobertura nacional. Nuestros técnicos viajan a cualquier región para realizar instalaciones de líneas de vida, inspecciones y capacitaciones. Proecon también atiende en regiones seleccionadas.",
+                contactTitle: "Contra Caidas + Proecon",
+                contactDesc: "Consulta por nuestros servicios integrados de seguridad en altura y soluciones eléctricas",
                 phone: "Teléfono",
                 email: "Email",
-                address: "Oficina",
-                addressValue: "Av. Providencia 1234, Santiago",
+                address: "Oficina Central",
+                addressValue: "PEDRO DE VALDIVIA NRO.451 A DPTO.2, LA CALERA",
                 hours: "Horario",
                 hoursWeek: "Lun-Vie: 8:00-18:00",
                 hoursSat: "Sáb: 9:00-13:00",
@@ -1234,23 +1653,24 @@ LA CALERA </p>
                 namePlaceholder: "Nombre completo",
                 emailPlaceholder: "Email",
                 phonePlaceholder: "Teléfono",
-                messagePlaceholder: "Tipo de sistema que necesita",
+                messagePlaceholder: "Mensaje",
                 submitBtn: "Enviar por WhatsApp",
-                rights: "Sistemas de Línea de Vida"
+                rights: "Seguridad en Altura y Soluciones Eléctricas"
             },
             en: {
-                companyName: "Altius Safety",
+                companyName: "Contra Caidas + Proecon",
                 home: "Home",
-                services: "Systems",
+                services: "Services",
                 projects: "Projects",
                 faq: "FAQ",
                 contact: "Contact",
-                heroTitle: "Altius Safety<br>Lifeline Systems",
-                heroDesc: "Fall protection for work at height. Design, installation and certification of horizontal and vertical lifelines.",
+                heroTitle: "Contra Caidas + Proecon",
+                heroDesc: "Specialists in lifeline systems and fall protection, now with professional electrical solutions through our alliance with Proecon.",
                 heroBtn: "Request Advice",
                 servicesTitle: "Our",
-                servicesHighlight: "Systems",
-                servicesDesc: "Safety solutions for work at height",
+                servicesHighlight: "Services",
+                servicesDesc: "Select the type of service you need",
+                // Contra Caidas services
                 service1: "Horizontal Lifelines",
                 service1Desc: "Flexible and rigid systems for horizontal movement on roofs and structures.",
                 service2: "Vertical Lifelines",
@@ -1263,27 +1683,40 @@ LA CALERA </p>
                 service5Desc: "Practical training for correct use of fall arrest systems.",
                 service6: "Equipment Sales",
                 service6Desc: "Harness, absorbers, connectors and portable lifelines.",
+                // Proecon services
+                proecon1: "Residential Installations",
+                proecon1Desc: "Complete installations for homes with the highest safety standards.",
+                proecon2: "Commercial Installations",
+                proecon2Desc: "Solutions for shops, offices, and buildings complying with current regulations.",
+                proecon3: "Industrial Installations",
+                proecon3Desc: "Industrial electrical systems with control panels and automation.",
+                proecon4: "Preventive Maintenance",
+                proecon4Desc: "Programs to prevent failures and extend the life of your installations.",
+                proecon5: "Renewable Energy",
+                proecon5Desc: "Solar panel installation and alternative energy systems.",
+                proecon6: "Electrical Studies",
+                proecon6Desc: "Load analysis, power quality, and electrical certifications.",
                 projectsTitle: "Featured",
                 projectsHighlight: "Projects",
-                projectsDesc: "Recent installations",
-                certifications: "Certifications and Standards",
+                projectsDesc: "Recent installations by Contra Caidas and Proecon",
+                certifications: "Contra Caidas Certifications",
                 faqTitle: "Frequently",
                 faqHighlight: "Asked Questions",
-                faqDesc: "We answer your questions about lifelines",
-                faq1: "What is a lifeline?",
-                faq1Answer: "It is a fall arrest system consisting of a flexible or rigid anchor (cable, rail) to which the worker connects via their harness, allowing safe movement at height.",
-                faq2: "How often should they be inspected?",
-                faq2Answer: "According to regulations, lifelines must be inspected annually by an accredited body. Visual inspection before each use is also recommended.",
-                faq3: "What standards do your systems meet?",
-                faq3Answer: "All our systems comply with international standards ANSI Z359, CE EN 795 and local regulations. We perform load testing and certification.",
+                faqDesc: "We answer your questions about our services",
+                faq1: "What is a lifeline and why is it mandatory?",
+                faq1Answer: "It is a fall arrest system mandatory for work at height according to regulations. It consists of an anchor (cable or rail) to which the worker connects via their harness, allowing safe movement.",
+                faq2: "How often should lifelines be inspected?",
+                faq2Answer: "According to ANSI/OSHA standards, they must be inspected annually by an accredited body. Contra Caidas performs inspections and certifications with specialized technicians.",
+                faq3: "What services does Proecon offer as an ally?",
+                faq3Answer: "Through our alliance with Proecon, we offer residential, commercial and industrial electrical installations, preventive maintenance, renewable energy and certified electrical studies.",
                 faq4: "Do you install throughout Chile?",
-                faq4Answer: "Yes, we have national coverage. Our technicians travel to any region to perform installations, inspections and training.",
-                contactTitle: "Need advice?",
-                contactDesc: "We help you choose the right system for your project",
+                faq4Answer: "Yes, Contra Caidas has national coverage. Our technicians travel to any region to perform lifeline installations, inspections and training. Proecon also serves selected regions.",
+                contactTitle: "Contra Caidas + Proecon",
+                contactDesc: "Ask about our integrated height safety and electrical solutions services",
                 phone: "Phone",
                 email: "Email",
-                address: "Office",
-                addressValue: "Av. Providencia 1234, Santiago",
+                address: "Head Office",
+                addressValue: "PEDRO DE VALDIVIA NRO.451 A DPTO.2, LA CALERA",
                 hours: "Hours",
                 hoursWeek: "Mon-Fri: 8:00-18:00",
                 hoursSat: "Sat: 9:00-13:00",
@@ -1291,23 +1724,24 @@ LA CALERA </p>
                 namePlaceholder: "Full name",
                 emailPlaceholder: "Email",
                 phonePlaceholder: "Phone",
-                messagePlaceholder: "Type of system you need",
+                messagePlaceholder: "Message",
                 submitBtn: "Send via WhatsApp",
-                rights: "Lifeline Systems"
+                rights: "Height Safety and Electrical Solutions"
             },
             pt: {
-                companyName: "Altius Safety",
+                companyName: "Contra Caidas + Proecon",
                 home: "Início",
-                services: "Sistemas",
+                services: "Serviços",
                 projects: "Projetos",
                 faq: "Perguntas",
                 contact: "Contato",
-                heroTitle: "Altius Safety<br>Sistemas de Linha de Vida",
-                heroDesc: "Proteção contra quedas para trabalhos em altura. Projeto, instalação e certificação de linhas de vida horizontais e verticais.",
+                heroTitle: "Contra Caidas + Proecon",
+                heroDesc: "Especialistas em sistemas de linha de vida e proteção contra quedas, agora com soluções elétricas profissionais através da nossa aliança com a Proecon.",
                 heroBtn: "Solicitar Assessoria",
                 servicesTitle: "Nossos",
-                servicesHighlight: "Sistemas",
-                servicesDesc: "Soluções de segurança para trabalho em altura",
+                servicesHighlight: "Serviços",
+                servicesDesc: "Selecione o tipo de serviço que você precisa",
+                // Contra Caidas services
                 service1: "Linhas de Vida Horizontais",
                 service1Desc: "Sistemas flexíveis e rígidos para deslocamento horizontal em telhados e estruturas.",
                 service2: "Linhas de Vida Verticais",
@@ -1320,27 +1754,40 @@ LA CALERA </p>
                 service5Desc: "Treinamento prático para uso correto de sistemas de proteção contra quedas.",
                 service6: "Venda de Equipamentos",
                 service6Desc: "Arnês, absorvedores, conectores e linhas de vida portáteis.",
+                // Proecon services
+                proecon1: "Instalações Residenciais",
+                proecon1Desc: "Instalações completas para residências com os mais altos padrões de segurança.",
+                proecon2: "Instalações Comerciais",
+                proecon2Desc: "Soluções para lojas, escritórios e edifícios em conformidade com os regulamentos atuais.",
+                proecon3: "Instalações Industriais",
+                proecon3Desc: "Sistemas elétricos industriais com painéis de controle e automação.",
+                proecon4: "Manutenção Preventiva",
+                proecon4Desc: "Programas para evitar falhas e prolongar a vida útil de suas instalações.",
+                proecon5: "Energias Renováveis",
+                proecon5Desc: "Instalação de painéis solares e sistemas de energia alternativa.",
+                proecon6: "Estudos Elétricos",
+                proecon6Desc: "Análise de carga, qualidade de energia e certificações elétricas.",
                 projectsTitle: "Projetos",
                 projectsHighlight: "Destaques",
-                projectsDesc: "Instalações recentes",
-                certifications: "Certificações e Normas",
+                projectsDesc: "Instalações recentes da Contra Caidas e Proecon",
+                certifications: "Certificações Contra Caidas",
                 faqTitle: "Perguntas",
                 faqHighlight: "Frequentes",
-                faqDesc: "Respondemos suas dúvidas sobre linhas de vida",
-                faq1: "O que é uma linha de vida?",
-                faq1Answer: "É um sistema de proteção contra quedas composto por uma ancoragem flexível ou rígida (cabo, trilho) à qual o trabalhador se conecta através de seu arnês, permitindo movimento seguro em altura.",
-                faq2: "Com que frequência devem ser inspecionadas?",
-                faq2Answer: "De acordo com os regulamentos, as linhas de vida devem ser inspecionadas anualmente por um organismo acreditado. A inspeção visual antes de cada uso também é recomendada.",
-                faq3: "Quais normas seus sistemas atendem?",
-                faq3Answer: "Todos os nossos sistemas atendem às normas internacionais ANSI Z359, CE EN 795 e regulamentações locais. Realizamos testes de carga e certificação.",
+                faqDesc: "Respondemos suas dúvidas sobre nossos serviços",
+                faq1: "O que é uma linha de vida e por que é obrigatória?",
+                faq1Answer: "É um sistema de proteção contra quedas obrigatório para trabalhos em altura de acordo com os regulamentos. Consiste em uma ancoragem (cabo ou trilho) à qual o trabalhador se conecta através de seu arnês, permitindo movimento seguro.",
+                faq2: "Com que frequência as linhas de vida devem ser inspecionadas?",
+                faq2Answer: "De acordo com as normas ANSI/OSHA, devem ser inspecionadas anualmente por um organismo acreditado. A Contra Caidas realiza inspeções e certificações com técnicos especializados.",
+                faq3: "Que serviços a Proecon oferece como aliada?",
+                faq3Answer: "Através da nossa aliança com a Proecon, oferecemos instalações elétricas residenciais, comerciais e industriais, manutenção preventiva, energias renováveis e estudos elétricos certificados.",
                 faq4: "Vocês instalam em todo o Chile?",
-                faq4Answer: "Sim, temos cobertura nacional. Nossos técnicos viajam para qualquer região para realizar instalações, inspeções e treinamentos.",
-                contactTitle: "Precisa de assessoria?",
-                contactDesc: "Ajudamos você a escolher o sistema adequado para seu projeto",
+                faq4Answer: "Sim, a Contra Caidas tem cobertura nacional. Nossos técnicos viajam para qualquer região para realizar instalações de linhas de vida, inspeções e treinamentos. A Proecon também atende em regiões selecionadas.",
+                contactTitle: "Contra Caidas + Proecon",
+                contactDesc: "Consulte nossos serviços integrados de segurança em altura e soluções elétricas",
                 phone: "Telefone",
                 email: "Email",
-                address: "Escritório",
-                addressValue: "Av. Providencia 1234, Santiago",
+                address: "Escritório Central",
+                addressValue: "PEDRO DE VALDIVIA NRO.451 A DPTO.2, LA CALERA",
                 hours: "Horário",
                 hoursWeek: "Seg-Sex: 8:00-18:00",
                 hoursSat: "Sáb: 9:00-13:00",
@@ -1348,9 +1795,9 @@ LA CALERA </p>
                 namePlaceholder: "Nome completo",
                 emailPlaceholder: "Email",
                 phonePlaceholder: "Telefone",
-                messagePlaceholder: "Tipo de sistema que necessita",
+                messagePlaceholder: "Mensagem",
                 submitBtn: "Enviar via WhatsApp",
-                rights: "Sistemas de Linha de Vida"
+                rights: "Segurança em Altura e Soluções Elétricas"
             }
         };
 
@@ -1365,7 +1812,7 @@ LA CALERA </p>
             document.querySelectorAll('[data-translate]').forEach(element => {
                 const key = element.getAttribute('data-translate');
                 if (translations[lang] && translations[lang][key]) {
-                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA' || element.tagName === 'SELECT') {
                         element.placeholder = translations[lang][key];
                     } else {
                         element.innerHTML = translations[lang][key];
